@@ -1,0 +1,38 @@
+.accountPageImage {
+    background-image: url('../assets/AccountPagePhoto.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.account-page-container {   
+    padding: 70px;  
+    box-sizing: border-box; 
+  }
+
+  .larger-text {
+    font-size: 18px; /* Adjust the size as needed */
+    /* You can add other styles as needed */
+  }
+
+  .larger-text-h1 {
+    font-size: 26px; /* Adjust the size as needed */
+    /* You can add other styles as needed */
+  }
+.formStyle {
+    z-index: 1;
+}
+
+.custom-modal {
+    background-color: #333; /* Dark grey background color */
+    color: #fff; /* White text color */
+  }
+
+.custom-modal-bg {
+    background-color: rgb(206, 202, 202);
+}

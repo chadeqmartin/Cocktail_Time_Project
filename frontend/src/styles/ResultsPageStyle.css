@@ -1,0 +1,39 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Display 4 cards in each row for larger screens */
+    gap: 10px; /* Adjust the gap between cards as needed */
+    
+  }
+  
+  /* Adjust layout for screens smaller than 768px */
+  @media screen and (max-width: 768px) {
+    .card-container {
+      grid-template-columns: repeat(2, 1fr); /* Display 2 cards in each row for screens smaller than 768px */
+    }
+  }
+
+  .resultPageImage {
+    background-image: url('../assets/ResultsPagePhoto.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+  }
+
+
+.custom-row {
+    margin-bottom: 30px; 
+  }
+  
