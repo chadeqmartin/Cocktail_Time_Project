@@ -33,11 +33,22 @@ class CocktailView(UserPermissions):
         favorites = Favorite.objects.get(user_id=request.user)
         cocktail_to_change = Cocktail.objects.get(name = name, favorites_list=favorites)
 
-        ser_cocktail = CocktailSerializer(cocktail_to_change, notes=request.notes, partial = True)
-
+        ser_cocktail = CocktailSerializer(cocktail_to_change, data=request.data, partial = True)
         if ser_cocktail.is_valid():
             ser_cocktail.save()
-            return Response('notes have been updated', status=HTTP_200_OK)
+            return Response('notes saved to cocktail', status=HTTP_200_OK)
+        else:
+            return Response('something went wrong', HTTP_400_BAD_REQUEST)
+        
+    def get(self, request, name):
+        favorites = Favorite.objects.get(user_id=request.user)
+        cocktail_to_get = Cocktail.objects.get(name=name, favorites_list=favorites)
+        ser_cocktail = CocktailSerializer(cocktail_to_get, data=request.data)
+        if ser_cocktail.is_valid():
+            return Response(ser_cocktail.data, HTTP_200_OK)
+        else:
+            return Response('something went wrong', HTTP_400_BAD_REQUEST)
+
 
 
 

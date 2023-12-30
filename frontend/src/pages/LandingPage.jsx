@@ -53,25 +53,26 @@ export const LandingPage = () => {
 
   return (
     <>
-      <div>
-        <div className="backgroundImage"></div>
-        <div className="overlay"></div>
-      </div>
-      <div className="flex-column justify-center items-center mr-11 ml-11 landingpage-container">
-        <div className="text-white">
-          <h1 className="larger-text-h1">Hello and welcome</h1>
-          <p className="larger-text">
-            Search below either by the name of the cocktail or by an ingredient,
-            either way, we got you! If you really like one of the cocktails from
-            your search, save it to your favorites for easy reference later.
-            Enjoy!
-          </p>
-        </div>
-        <Form
-          className="formStyle"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSearch();
+    <div>
+    <div className="backgroundImage"></div>
+    <div className="overlay"></div>
+  </div>
+  <div className="landingpage-container">
+    <div className="text-white text-center">
+      <h1 className="larger-text-h1">Hello and welcome</h1>
+      <p className="larger-text">
+        Search below either by the name of the cocktail or by an ingredient,
+        either way, we got you! If you really like one of the cocktails from
+        your search, save it to your favorites for easy reference later.
+        Enjoy!
+      </p>
+    </div>
+    <div className="form-container text-center">
+      <Form
+        className="formStyle"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSearch();
           }}
         >
           <Form.Group as={Row} controlId="formHorizontalPassword">
@@ -117,6 +118,7 @@ export const LandingPage = () => {
             </Col>
           </Row>
         </Form>
+      </div>
       </div>
     </>
   );

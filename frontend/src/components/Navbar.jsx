@@ -48,14 +48,13 @@ function Navigation({ user, setUser }) {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
-              
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   The Usuals
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body className='backdrop-opacity-0'>
+              <Offcanvas.Body className="backdrop-opacity-0">
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   {user ? (
                     <>

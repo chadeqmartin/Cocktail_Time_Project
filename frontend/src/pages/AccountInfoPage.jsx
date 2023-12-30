@@ -51,9 +51,9 @@ export const AccountInfoPage = () => {
         api.defaults.headers.common["Authorization"] = `Token ${token}`;
         let response = await api.put("users/info/", formData);
         setUser(response.data);
-        window.location.reload();
+        getUser();
+        setShowModal(false);
       }
-      setShowModal(false);
     } catch (error) {
       console.error("Error updating account information:", error);
     }
@@ -145,10 +145,18 @@ export const AccountInfoPage = () => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal} className="text-black">
+          <Button
+            variant="secondary"
+            onClick={handleCloseModal}
+            className="text-black"
+          >
             Close
           </Button>
-          <Button variant="primary" onClick={handleSaveChanges} className="text-black">
+          <Button
+            variant="primary"
+            onClick={() => handleSaveChanges()}
+            className="text-black"
+          >
             Save Changes
           </Button>
         </Modal.Footer>
@@ -165,10 +173,18 @@ export const AccountInfoPage = () => {
           undone.
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={hideDeleteConfirmationDialog} className="text-black">
+          <Button
+            variant="secondary"
+            onClick={hideDeleteConfirmationDialog}
+            className="text-black"
+          >
             Cancel
           </Button>
-          <Button variant="danger" onClick={deleteAccount} className="text-black">
+          <Button
+            variant="danger"
+            onClick={deleteAccount}
+            className="text-black"
+          >
             Confirm Delete
           </Button>
         </Modal.Footer>

@@ -40,38 +40,41 @@ export const HomePage = () => {
         <div className="overlay"></div>
       </div>
 
-      <div className="text-white">
+      <div className="homepage-container text-white text-center">
         <h1>Welcome to Cocktail Time</h1>
-        <h2>Sign up if you're new (it's totaly free) or simply login if this isn't your first rodeo.</h2>
-        <h3>Inside you'll find lots of great cocktail recipes, photos for inspiration and informative videos</h3>
+        <h2>
+          Sign up if you're new (it's totally free) or simply login if this
+          isn't your first rodeo.
+        </h2>
+        <h3>
+          Inside you'll find lots of great cocktail recipes, photos for
+          inspiration, and informative videos
+        </h3>
+
+        {existingUser ? (
+          <>
+            <Register setUser={setUser} />
+            <Button
+              variant="outline-success"
+              className="text-white mt-3"
+              onClick={() => setExistingUser(!existingUser)}
+            >
+              Already have an account
+            </Button>
+          </>
+        ) : (
+          <>
+            <Login setUser={setUser} />
+            <Button
+              variant="outline-success"
+              className="text-white mt-3"
+              onClick={() => setExistingUser(!existingUser)}
+            >
+              Don't have an account
+            </Button>
+          </>
+        )}
       </div>
-      <Container className="homepage-container mt-5 mt-lg-5 mx-auto">
-        <div className="text-white">
-          {existingUser ? (
-            <>
-              <Register setUser={setUser} />
-              <Button
-                variant="outline-success"
-                className="text-white"
-                onClick={() => setExistingUser(!existingUser)}
-              >
-                Already have an account
-              </Button>
-            </>
-          ) : (
-            <>
-              <Login setUser={setUser} />
-              <Button
-                variant="outline-success"
-                className="text-white"
-                onClick={() => setExistingUser(!existingUser)}
-              >
-                Don't have an account
-              </Button>
-            </>
-          )}
-        </div>
-      </Container>
     </>
   );
 };

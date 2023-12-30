@@ -9,15 +9,14 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import authenticate, login, logout
 from .serializers import UserSerializer
-# from favorite_app.models import Favorite
-# Create your views here.
+
 
 class Sign_up(APIView):
     def post(self, request):
             data = request.data
             data['username'] = request.data.get('email')
             new_user = User.objects.create_user(**data)
-            # Favorite.objects.create(user_id=new_user)
+           
             if new_user is not None:
                 new_token = Token.objects.create(user=new_user)
                 login(request, new_user)
