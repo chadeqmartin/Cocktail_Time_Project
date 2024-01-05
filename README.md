@@ -31,6 +31,6 @@ Full CRUD functionality for cocktails:
 ## Third-Party APIs
 Cocktail Time integrates with two third-party APIs to provide enhanced cocktail information and instructional videos:
 
-- **CocktailDB API:** We use the CocktailDB API to fetch detailed cocktail information, including ingredients, instructions, and images. This API enriches the user experience by providing comprehensive cocktail data.
+- **CocktailDB API:** This app uses the CocktailDB API to fetch detailed cocktail information, including ingredients, instructions, and images. This API enriches the user experience by providing comprehensive cocktail data.
 
 - **YouTube API:** When users click on a cocktail's details, Cocktail Time fetches instructional video links from YouTube. This feature allows users to watch videos on how to prepare the cocktail they are interested in, adding a practical dimension to the app.
