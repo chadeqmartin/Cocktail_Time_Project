@@ -26,15 +26,16 @@
   color: white
 }
 
+
 .cocktailInfo {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: space-between; 
   margin-top: 20px;
 }
 
 .cocktailImage {
-  width: 300px; 
+  width: 300px;
+  margin-right: 20px; 
 }
 
 .ingredientsAndInstructions {
@@ -44,12 +45,29 @@
   color: white
 }
 
+.ingredientsAndInstructions h3 {
+  font-size: 18px; 
+}
+
 .video {
   margin-top: 20px;
 }
 
+.addNotesTitle {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px; 
+}
+
 .notes {
   margin-top: 20px;
+  text-align: center;
+}
+
+.notes form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
   

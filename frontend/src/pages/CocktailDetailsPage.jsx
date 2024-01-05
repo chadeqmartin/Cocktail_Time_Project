@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 import { useParams, useOutletContext } from "react-router-dom";
 import { api } from "../utilities";
 import { CocktailVideo } from "../components/Video";
@@ -105,7 +106,7 @@ export const CocktailDetailsPage = () => {
               </ul>
             </div>
             <div>
-              <h3>Instructions:</h3>
+              <h3 className="mt-3">Instructions:</h3>
               <p>{cocktail.strInstructions}</p>
             </div>
           </div>
@@ -115,7 +116,7 @@ export const CocktailDetailsPage = () => {
         </div>
         {favorites.some((favorite) => favorite.name === cocktail.strDrink) && (
           <div className={"notes"}>
-            <h3>Add Notes</h3>
+            <h3 className="addNotesTitle">Add Notes</h3>
             <form onSubmit={saveNote}>
               <textarea
                 rows="4"
@@ -125,7 +126,7 @@ export const CocktailDetailsPage = () => {
                 onChange={handleNoteChange}
                 className="text-black"
               />
-              <button type="submit">Save Notes</button>
+              <Button className="mt-2 mb-10" type="submit">Save Notes</Button>
             </form>
           </div>
         )}
